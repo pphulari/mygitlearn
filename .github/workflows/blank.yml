@@ -1,0 +1,14 @@
+name: Simple Hello World Workflow
+
+on: [push]
+
+jobs:
+  explore-github-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: Run a simple command
+        run: echo "Hello, world! This workflow ran due to a ${{ github.event_name }} event."
+      - name: List files in the repository
+        run: ls -l
